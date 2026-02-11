@@ -1,0 +1,214 @@
+<!-- projects/automated-production-line.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Automated Production Line | Mohamed M. Badr</title>
+  <meta name="description" content="Automated Production Line project page: overview, objectives, system architecture, sensors and actuators, control strategy, and outcomes." />
+
+  <!-- Reuse your main site styling -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <script>
+    document.documentElement.classList.add("js");
+  </script>
+</head>
+
+<body>
+  <!-- Optional: simple top navigation back to the main page -->
+  <nav class="topnav" aria-label="Primary navigation">
+    <div class="container nav-inner">
+      <div class="nav-links" aria-label="Navigation">
+        <a href="../index.html#projects">Back to Projects</a>
+        <a href="../index.html#courses">Courses</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="site-header" id="top">
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-scanline" aria-hidden="true"></div>
+
+    <div class="container header-wrap">
+      <div class="hero">
+        <div class="hero-left reveal">
+          <div class="badge-row">
+            <span class="badge">Mechatronics</span>
+            <span class="badge badge-2">Automation</span>
+            <span class="badge badge-3">Control Systems</span>
+          </div>
+
+          <h1 class="hero-title">Automated Production Line</h1>
+          <p class="hero-subtitle">Undergraduate Project | AIET | 2017</p>
+
+          <div class="profile-links" aria-label="Quick links">
+            <a class="plink" href="../index.html">Home</a>
+            <a class="plink" href="../index.html#projects">Projects and Grants</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-divider" aria-hidden="true"></div>
+    </div>
+  </header>
+
+  <main class="container main">
+
+    <section class="section reveal" id="overview">
+      <div class="section-head"><h2>Overview</h2></div>
+      <div class="card card-glow">
+        <p class="muted">
+          This page summarizes the Automated Production Line project supervised at AIET in 2017.
+          It documents the main objectives, system layout, core components, and the control and
+          automation approach used to coordinate the line.
+        </p>
+      </div>
+    </section>
+
+    <section class="section reveal" id="objectives">
+      <div class="section-head"><h2>Objectives</h2></div>
+      <div class="card">
+        <ul class="bullets">
+          <li>Design a functional production-line workflow from input handling to finished output.</li>
+          <li>Integrate sensors and actuators to automate key stages and improve repeatability.</li>
+          <li>Implement a control logic sequence to coordinate stations and ensure safe operation.</li>
+          <li>Validate performance through testing, troubleshooting, and documented results.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section reveal" id="system">
+      <div class="section-head"><h2>System Description</h2></div>
+      <div class="card">
+        <ul class="bullets">
+          <li><strong>Line workflow:</strong> Material entry, processing stations, transfer, and exit/output.</li>
+          <li><strong>Mechanical structure:</strong> Frames, mounts, guides, and station fixtures sized for stability.</li>
+          <li><strong>Electrical panel:</strong> Power distribution, protection, wiring organization, and I/O interfacing.</li>
+          <li><strong>Human interface:</strong> Basic operator controls (start, stop, reset) and status indication.</li>
+        </ul>
+
+        <div class="spacer"></div>
+
+        <p class="muted">
+          If you have photos, wiring diagrams, or a block diagram, you can embed them in the section below.
+        </p>
+      </div>
+    </section>
+
+    <section class="section reveal" id="components">
+      <div class="section-head"><h2>Sensors and Actuators</h2></div>
+      <div class="card">
+        <h3 class="subhead">Typical Sensors</h3>
+        <ul class="bullets">
+          <li>Limit switches or proximity sensors for position and station detection.</li>
+          <li>Optical sensors for part presence or counting.</li>
+          <li>Emergency stop and safety interlocks for safe operation.</li>
+        </ul>
+
+        <div class="spacer"></div>
+
+        <h3 class="subhead">Typical Actuators</h3>
+        <ul class="bullets">
+          <li>DC motors or stepper motors for conveyors or transfer mechanisms.</li>
+          <li>Solenoids or pneumatic actuators for pushing, clamping, or diversion tasks.</li>
+          <li>Indicators and alarms for status and fault signaling.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section reveal" id="control">
+      <div class="section-head"><h2>Control Strategy</h2></div>
+      <div class="card">
+        <ul class="bullets">
+          <li><strong>Sequence control:</strong> Step-by-step station logic with clear transition conditions.</li>
+          <li><strong>Interlocks:</strong> Prevent conflicting actuator commands and unsafe transitions.</li>
+          <li><strong>Fault handling:</strong> Stop or safe state on sensor disagreement or timeout conditions.</li>
+          <li><strong>Reset behavior:</strong> Return the line to a known initial state before restarting.</li>
+        </ul>
+
+        <div class="spacer"></div>
+
+        <p class="muted">
+          You can add a state diagram image or a short table describing each step (state) and its entry and exit conditions.
+        </p>
+      </div>
+    </section>
+
+    <section class="section reveal" id="outcomes">
+      <div class="section-head"><h2>Outcomes</h2></div>
+      <div class="card">
+        <ul class="bullets">
+          <li>Demonstrated automated station sequencing with reliable part transfer.</li>
+          <li>Validated sensor feedback and actuator timing through iterative testing.</li>
+          <li>Documented troubleshooting and improvements to increase robustness.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section reveal" id="media">
+      <div class="section-head"><h2>Images and Media</h2></div>
+      <div class="card">
+        <p class="muted">
+          Add images by placing them in a folder like <code>projects/media/</code> and referencing them below.
+          Example:
+        </p>
+
+        <pre class="muted" style="white-space: pre-wrap; overflow-wrap: anywhere; margin: 0;">
+&lt;img src="media/automated-line-1.jpg" alt="Automated Production Line prototype" style="max-width:100%; border-radius:16px;" /&gt;
+        </pre>
+
+        <!-- Example image (uncomment after you add a real file)
+        <div class="spacer"></div>
+        <img
+          src="media/automated-line-1.jpg"
+          alt="Automated Production Line prototype"
+          style="max-width:100%; border-radius:16px;"
+          loading="lazy"
+        />
+        -->
+      </div>
+    </section>
+
+    <section class="section reveal" id="back">
+      <div class="section-head"><h2>Back</h2></div>
+      <div class="card">
+        <ul class="bullets">
+          <li><a class="course-link" href="../index.html#projects">Return to Projects and Grants</a></li>
+          <li><a class="course-link" href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Mohamed M. Badr. Hosted on GitHub Pages.</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    (function () {
+      const els = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window) || els.length === 0) {
+        els.forEach((el) => el.classList.add("in"));
+        return;
+      }
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("in");
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      els.forEach((el, idx) => {
+        el.style.setProperty("--reveal-delay", (idx * 60) + "ms");
+        obs.observe(el);
+      });
+    })();
+  </script>
+</body>
+</html>
