@@ -83,6 +83,7 @@
       transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
       font-size: 13px;
       letter-spacing: 0.15px;
+      cursor: pointer;
     }
 
     .btn:hover {
@@ -132,6 +133,61 @@
       color: rgba(169,182,211,0.96);
       line-height: 1.65;
       font-size: 14px;
+    }
+
+    /* Modal */
+    .modal-overlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 18px;
+    }
+
+    .modal-overlay.open{ display: flex; }
+
+    .modal{
+      width: min(520px, 100%);
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(7, 12, 20, 0.92);
+      box-shadow: 0 22px 60px rgba(0,0,0,0.65);
+      padding: 16px;
+    }
+
+    .modal h3{
+      margin: 0;
+      font-size: 16px;
+      color: rgba(233,239,255,0.95);
+      letter-spacing: 0.15px;
+    }
+
+    .modal p{
+      margin: 10px 0 0 0;
+      color: rgba(169,182,211,0.96);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .modal-actions{
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .btn-close{
+      border-color: rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .btn-close:hover{
+      border-color: rgba(102,163,255,0.55);
+      background: rgba(255,255,255,0.05);
     }
   </style>
 </head>
@@ -325,7 +381,8 @@
               and Model-based Methods.
             </p>
             <div class="btn-row">
-              <a class="btn" target="_blank" rel="noopener"
+              <!-- Keep the link, but we intercept it and show the message -->
+              <a id="dl-v1100" class="btn" target="_blank" rel="noopener"
                  href="https://drive.google.com/drive/folders/1w0-qN9ysdqVgR4RPBCCt6kRBDQruHroC?usp=sharing">
                 Download CortexLab V1.10.0
               </a>
@@ -339,6 +396,17 @@
       <p>© <span id="year"></span> Mohamed M. Badr. Hosted on GitHub Pages.</p>
     </footer>
   </main>
+
+  <!-- Modal (message shown when clicking Download CortexLab V1.10.0) -->
+  <div id="version-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="vm-title" aria-describedby="vm-desc">
+    <div class="modal">
+      <h3 id="vm-title">CortexLab V1.10.0</h3>
+      <p id="vm-desc">This version is under development.</p>
+      <div class="modal-actions">
+        <button id="vm-close" class="btn btn-close" type="button">Close</button>
+      </div>
+    </div>
+  </div>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -361,6 +429,42 @@
       els.forEach((el, idx) => {
         el.style.setProperty("--reveal-delay", (idx * 60) + "ms");
         obs.observe(el);
+      });
+    })();
+
+    (function () {
+      const link = document.getElementById("dl-v1100");
+      const modal = document.getElementById("version-modal");
+      const closeBtn = document.getElementById("vm-close");
+
+      if (!link || !modal || !closeBtn) return;
+
+      function openModal() {
+        modal.classList.add("open");
+        closeBtn.focus();
+      }
+
+      function closeModal() {
+        modal.classList.remove("open");
+        link.focus();
+      }
+
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        openModal();
+      });
+
+      closeBtn.addEventListener("click", function () {
+        closeModal();
+      });
+
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) closeModal();
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (!modal.classList.contains("open")) return;
+        if (e.key === "Escape") closeModal();
       });
     })();
   </script>
